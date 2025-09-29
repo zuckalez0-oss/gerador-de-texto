@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Texto: {{ text.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Texto Pré-Pronto</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <form method="POST">
+            <label for="name">Nome do Layout:</label>
+            <input type="text" id="name" name="name" required value="{{ text.name }}">
+            <label for="content">Conteúdo do Texto (use {saudacao} para saudação automática e `{variavel_qualquer}` para suas variáveis customizadas):</label>
+            <textarea id="content" name="content" rows="10" required>{{ text.content }}</textarea>
+            <button type="submit" class="button">Atualizar Texto</button>
+        </form>
+        <a href="{{ url_for('index') }}" class="button back-button">Voltar</a>
+    </div>
+</body>
+</html>

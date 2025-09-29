@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto Gerado - {{ text_name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Texto Gerado para: {{ text_name }}</h1>
+        <div class="generated-output">
+            <pre id="output-text">{{ generated_content }}</pre>
+            <button class="button copy-button" onclick="copyText()">Copiar Texto</button>
+        </div>
+        <a href="{{ url_for('index') }}" class="button back-button">Voltar para a Lista</a>
+    </div>
+
+    <script>
+        function copyText() {
+            const textElement = document.getElementById('output-text');
+            const range = document.createRange();
+            range.selectNodeContents(textElement); // Use selectNodeContents para garantir todo o texto
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            try {
+                document.execCommand('copy');
+                alert('Texto copiado para a área de transferência!');
+            } catch (err) {
+                alert('Falha ao copiar o texto.');
+                console.error('Erro ao copiar:', err);
+            }
+            window.getSelection().removeAllRanges();
+        }
+    </script>
+</body>
+</html>

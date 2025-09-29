@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar Texto: {{ text.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerar Texto para: {{ text.name }}</h1>
+        <p>Preencha os campos abaixo para gerar o texto final. A saudação será adicionada automaticamente.</p>
+
+        <form action="{{ url_for('generate_text', text_id=text.id) }}" method="POST">
+            {% for placeholder in placeholders %}
+                <label for="var_{{ placeholder }}">Valor para '{{ placeholder }}':</label>
+                <input type="text" id="var_{{ placeholder }}" name="var_{{ placeholder }}" placeholder="Insira o valor para {{ placeholder }}">
+            {% endfor %}
+
+            {% if not placeholders %}
+                <p>Este texto não contém variáveis customizadas além da saudação.</p>
+            {% endif %}
+            
+            <button type="submit" class="button">Gerar Texto Final</button>
+        </form>
+        <a href="{{ url_for('index') }}" class="button back-button">Voltar para a Lista</a>
+    </div>
+</body>
+</html>
