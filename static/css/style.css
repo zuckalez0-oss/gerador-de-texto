@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f0f2f5; /* Light gray background */
+    background-color: #f0f2f5;
     color: #333;
     margin: 0;
     padding: 2px;
@@ -13,60 +13,61 @@ body {
 .container {
     background-color: #fff;
     padding: 30px;
-    border-radius: 12px; /* More rounded corners */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Softer, larger shadow */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     width: 100%;
     max-width: 800px;
     box-sizing: border-box;
 }
 
 h1 {
-    color: #2c3e50; /* Darker, more professional blue */
+    color: #2c3e50;
     text-align: center;
     margin-bottom: 25px;
-    font-size: 2.2em; /* Larger heading */
-    font-weight: 600; /* Semi-bold */
+    font-size: 2.2em;
+    font-weight: 600;
 }
 
 h2 {
-    color: #34495e; /* Slightly lighter than h1 */
+    color: #34495e;
     margin-bottom: 15px;
     font-size: 1.5em;
     font-weight: 500;
 }
 
+/* Botões base */
 .button {
-    display: inline-flex; /* Use flex to center content */
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    min-width: 5px; /* Set a minimum width for consistent sizing */
-    height: 4px; /* Consistent height */
+    min-width: 100px;
+    height: 40px;
     background-color: #007bff;
     color: white;
-    padding: 20px 1px; /* Slightly more padding */
+    padding: 8px 16px;
     border: none;
-    border-radius: 8px; /* More rounded buttons */
+    border-radius: 8px;
     cursor: pointer;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 500; /* Medium weight for text */
-    margin-top: 10px;
-    margin-right: 10px;
-    transition: all 0.3s ease; /* Smooth transitions for all properties */
-    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2); /* Subtle shadow for primary buttons */
+    font-size: 14px;
+    font-weight: 500;
+    margin: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+    box-sizing: border-box;
 }
 
 .button:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px); /* Slight lift effect on hover */
+    transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
 }
 
+/* Botões específicos */
 .add-new-text-button {
-    background-color: #28a745; /* Green for add button */
+    background-color: #28a745;
     box-shadow: 0 2px 5px rgba(40, 167, 69, 0.2);
     margin-bottom: 20px;
-    font-size: 17px;
+    font-size: 16px;
     padding: 12px 20px;
     min-width: 150px;
     height: 45px;
@@ -88,7 +89,7 @@ h2 {
 }
 
 .generate-button {
-    background-color: #007bff; /* Primary blue for generate */
+    background-color: #007bff;
     box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
 }
 
@@ -98,8 +99,8 @@ h2 {
 }
 
 .edit-button {
-    background-color: #ffc107; /* Yellow for edit */
-    color: #333; /* Darker text for contrast */
+    background-color: #ffc107;
+    color: #333;
     box-shadow: 0 2px 5px rgba(255, 193, 7, 0.2);
 }
 
@@ -109,34 +110,42 @@ h2 {
     box-shadow: 0 4px 10px rgba(255, 193, 7, 0.3);
 }
 
+.delete-button {
+    background-color: #dc3545;
+    box-shadow: 0 2px 5px rgba(220, 53, 69, 0.2);
+    /* Corrigido: removido width e padding excessivos */
+}
+
 .delete-button:hover {
     background-color: #c82333;
     box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
-    
-}
-.delete-button{
-  width: 1000000px;
-  padding: 30px;
-  left: 300px;
-
-    
-
 }
 
+.copy-button {
+    background-color: #28a745;
+    box-shadow: 0 2px 5px rgba(40, 167, 69, 0.2);
+}
+
+.copy-button:hover {
+    background-color: #218838;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+}
+
+/* Lista de textos */
 .text-list {
     margin-top: 25px;
 }
 
 .text-item {
-    background-color: #ffffff; /* White background for items */
-    border: 1px solid #e0e6ed; /* Lighter border */
+    background-color: #ffffff;
+    border: 1px solid #e0e6ed;
     padding: 20px;
     margin-bottom: 15px;
-    border-radius: 10px; /* More rounded corners for items */
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Soft shadow for items */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -157,33 +166,30 @@ h2 {
 .text-item p {
     margin-bottom: 10px;
     white-space: pre-wrap;
-    line-height: 1.6; /* Improved readability */
+    line-height: 1.6;
     color: #555;
 }
 
+/* Área de ações - MELHORIA PRINCIPAL */
 .text-item .actions {
     margin-top: 15px;
     display: flex;
-    gap: 10px; /* Space between buttons */
+    gap: 10px;
     flex-wrap: wrap;
-    justify-content: flex-start; /* Align buttons to the start */
+    justify-content: flex-start;
+    align-items: center;
 }
 
+/* Garantir que todos os botões tenham o mesmo tamanho */
 .text-item .actions .button {
-    margin: 0; /* Remove margin-top and right from individual buttons */
-    flex-grow: 1; /* Allow buttons to grow and fill space */
-    max-width: 120px; /* Max width for individual buttons */
+    flex: 1;
+    min-width: 90px;
+    max-width: 120px;
+    margin: 0;
+    text-align: center;
 }
 
-/* Ensure consistent button width for the action group */
-.text-item .actions .generate-button,
-.text-item .actions .edit-button,
-.text-item .actions .delete-button {
-    min-width: 90px; /* Keep consistent min-width */
-    flex-basis: auto; /* Let content determine initial size, but allow grow */
-}
-
-
+/* Formulários */
 form {
     display: flex;
     flex-direction: column;
@@ -221,9 +227,10 @@ form textarea:focus {
 
 form textarea {
     resize: vertical;
-    min-height: 180px; /* Slightly taller default */
+    min-height: 180px;
 }
 
+/* Saída gerada */
 .generated-output {
     background-color: #f8f9fa;
     border: 1px solid #dee2e6;
@@ -235,8 +242,8 @@ form textarea {
 
 #output-text {
     white-space: pre-wrap;
-    font-family: 'Consolas', 'Menlo', 'Courier New', monospace; /* Monospace for code/text output */
-    background-color: #eef2f5; /* Lighter background for output */
+    font-family: 'Consolas', 'Menlo', 'Courier New', monospace;
+    background-color: #eef2f5;
     color: #2c3e50;
     padding: 20px;
     border-radius: 8px;
@@ -246,25 +253,16 @@ form textarea {
     line-height: 1.5;
 }
 
-.copy-button {
-    background-color: #28a745;
-    box-shadow: 0 2px 5px rgba(40, 167, 69, 0.2);
-}
-
-.copy-button:hover {
-    background-color: #218838;
-    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
-}
-
+/* Mensagens flash */
 .flashes {
     list-style: none;
     padding: 0;
     margin: 0 0 25px 0;
-    background-color: #d4edda; /* Success green */
+    background-color: #d4edda;
     color: #155724;
     border: 1px solid #c3e6cb;
     border-radius: 8px;
-    overflow: hidden; /* Ensures padding is contained */
+    overflow: hidden;
 }
 
 .flashes li {
@@ -273,7 +271,7 @@ form textarea {
     font-weight: 500;
 }
 
-/* Responsive adjustments */
+/* Responsividade */
 @media (max-width: 600px) {
     .container {
         padding: 20px;
@@ -288,18 +286,17 @@ form textarea {
     }
 
     .button {
-        width: 100%; /* Full width on small screens */
-        margin-right: 0;
-        margin-bottom: 10px; /* Space between stacked buttons */
-        min-width: unset; /* Remove min-width override for full width */
+        width: 100%;
+        margin: 5px 0;
+        min-width: unset;
     }
 
     .text-item .actions {
-        flex-direction: column; /* Stack action buttons vertically */
+        flex-direction: column;
     }
 
     .text-item .actions .button {
         width: 100%;
-        max-width: unset; /* Allow buttons to take full width */
+        max-width: unset;
     }
 }
